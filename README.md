@@ -10,6 +10,7 @@ To build application.
 I will be documenting every progress of my learning here
 
 TOOLS
+
 I am using VS code as my text-editor
 I install php extension to help me run php files
 I install XAMPP to enable me run Apache and MySQL servers
