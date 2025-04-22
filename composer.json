@@ -1,0 +1,18 @@
+{
+    "name": "abedn/php-dashboard",
+    "description": "Application to track  my progress.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Adjocacher Abednego",
+            "email": "141531265+abednegoadjocacher@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    }
+}
