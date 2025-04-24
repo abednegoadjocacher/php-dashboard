@@ -27,3 +27,10 @@ PHP has increment and decrement operators like C, C++, JS and etc..
 Logical operators like <, > , <=, >=, ==,===,!=, !, ||, and, Or etc..
 PHP constant are define in CAPS. (eg. const FULL_NAME)
 String concatenating is combining strings together
+
+To keep my working workspace clean I created a New folder called 'App'. This folder bears the same name us my namespace.
+
+Some Key Terms:
+1. IMPLEMENTATION: refers to a function or class or method that is written based on idea.
+2. CONCRETE CLASS: a class where its methods are all implemented.
+3. ABSTRACT CLASS: a class that does not have implemented methods or partially implemented methods. 

@@ -1,23 +1,48 @@
 <?php
-declare(strict_types=1); // This enables PHP to check for valid input types of data. If for instance, a function expects an integer argument to be passed and a string is rather given the above line produce an error.
+declare(strict_types=1); 
+
+use App\Utility;// This enables PHP to check for valid input types of data. If for instance, a function expects an integer argument to be passed and a string is rather given the above line produce an error.
 
 
-require_once 'Account.php';# This is line load the account class
+
+#To autoload classes;
+spl_autoload_register(function($class) {
+    $formattedClass = str_replace("\\", "/", $class);
+    $path = "{$formattedClass}.php";
+    require_once $path;
+});
+
+
+// require_once 'App\SocialMedia.php';
+// require_once 'App\Account.php';# This is line load the account class
+#use App\Account, App\Accounts;//This line of code help to import a class from a namespace. Or you can also use this below👇👇👇
+use App\{Account, Accounts, SocialMedia, Utilities, ToasterPremium, AbstractProduct, RestaurantOne, RestaurantTwo, FoodApp};
+
+
 $myAccount = new Account('Abed', 400000);
 $solosAccount = new Account('Solomon', 30000);
-$princeAccount = null/*new Accounts('Prince', 89900) I have commented this part of the code to test for the null safe operator*/;
+$princeAccount = /*null*/new Accounts('Prince', 89900)/* I have commented this part of the code to test for the null safe operator*/;
 
 
 // '?'-> IS called the null safe operator. It first checks if the value of the object is null before running. 
-$princeAccount?->deposit(90)->deposit(87)->deposit(2);//THIS IS CALLED METHOD CHAINING.
+$princeAccount?->deposit(90)->deposit(87)->deposit(28);//THIS IS CALLED METHOD CHAINING.
 var_dump($solosAccount) . "<br>";
 var_dump($myAccount) . "<br>";
-var_dump($princeAccount);
+//var_dump($princeAccount);
 
+Utilities::printArray([45,53,21,44,55,77]);
+$emeliaAccount = new Accounts('Emelia', 50);
+echo $emeliaAccount->getBalance();
 
+#Class inheritance
+#I have class called ToasterPremium.
+$myToaster = new ToasterPremium(8);
 
+$myToaster->toast();//The function toast is inherit from the Toast class
 
-
+$restaurant = new FoodApp(
+    new RestaurantTwo()
+);
 
 
 
