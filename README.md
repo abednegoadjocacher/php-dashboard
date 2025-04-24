@@ -14,3 +14,6 @@ TOOLS
 I am using VS code as my text-editor
 I install php extension to help me run php files
 I install XAMPP to enable me run Apache and MySQL servers
+
+On 24th April, 2025, I cleaned up my code base by deleting all that I have done in the previous.
+I am restarting the project again.
