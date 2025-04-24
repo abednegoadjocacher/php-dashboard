@@ -1,7 +1,49 @@
-<?php 
-
+<?php
 declare(strict_types=1); // This enables PHP to check for valid input types of data. If for instance, a function expects an integer argument to be passed and a string is rather given the above line produce an error.
+
+
+require_once 'Account.php';# This is line load the account class
+$myAccount = new Account('Abed', 400000);
+$solosAccount = new Account('Solomon', 30000);
+$princeAccount = null/*new Accounts('Prince', 89900) I have commented this part of the code to test for the null safe operator*/;
+
+
+// '?'-> IS called the null safe operator. It first checks if the value of the object is null before running. 
+$princeAccount?->deposit(90)->deposit(87)->deposit(2);//THIS IS CALLED METHOD CHAINING.
+var_dump($solosAccount) . "<br>";
+var_dump($myAccount) . "<br>";
+var_dump($princeAccount);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 echo '<h1>Hello World</h1>';
+
+
+include_once 'nav.php'; // The include_once is used to link one file to another. There are other ways of load files to another file. You can used the require keyword like how I used the include_one. Moreover, we have include itself which does the same thing but will allow include one file multiple time which can sometimes result in problems.
+
 
 // This is single line comment.
 # this is also a single line comment.
@@ -83,3 +125,74 @@ var_dump($result);
 }
 getPermission();// function calling Or invoking of a function
 
+//Loops in PHP
+$a = 1;
+while($a <= 20){
+    echo $a . "<br>";
+    $a++;
+}
+
+// Do while loop
+do{
+echo $a . "<br>";
+$a++;
+}while($a <= 15);
+
+
+// For loop
+for($i = 1; $i <= 30; $i++){
+    echo $i . "<br>";
+}
+
+//foreach is used to loop through arrays.
+$names = ['Abed', 'Jane', 'Judith', 'Solomon', 'Prince', 'Emelia'];
+foreach($names as $key => $name){
+    var_dump($key);
+    var_dump($name);
+}
+//PHP CONSTANTS
+echo PHP_VERSION;
+echo PHP_INT_MAX;
+//PHP has MAGIC CONSTANTS. THEY START WITH TWO UNDERSCORES AND END WITH THE SAME NUMBER OF UNDERSCORE
+echo __DIR__ . "<br>";
+echo __FILE__;
+
+//To free memory space in PHP use the unset function
+// It can be used for deleting items in an array.
+//After deleting items from the array the indexes does will no longer be order.
+//There to orderly arrange the indexes, use the function 'array_values(//Pass the name of the array)'
+// E.g
+$foodItems = ['Gari', 'Milo','Banku', 'Sugar', 'Maize'];
+print_r($foodItems) . "<br>";//The print_r prints the values without their data types unlike var_dump function.
+unset($foodItems[1]); // The item at index 1 is deleted
+
+print_r($foodItems) . "<br>";
+$foodItems = array_values($foodItems);//To re-index the items
+print_r($foodItems);
+
+
+//A variadic function accept unlimited number of argument
+// The values passed to variadic function is store as an array.
+function sum(int|float ...$nums){
+    return array_sum($nums);//The array_sum loops through the arguments and adds them. This function is useful because you do not have to manual write your own loop to do that.
+}
+echo sum(79,56,45,453,3332);
+
+
+//working with files in php
+$folder = scandir(__DIR__);
+    print_R($folder);
+
+//Check for file existence
+if (file_exists('example.txt')){
+    echo 'File found!' . "<br>";
+    echo filesize('example.txt') . "<br>";//Check file size
+    file_put_contents('example.txt','Hello Abednego');//Write content into file
+   
+    clearstatcache();//To clear cache status
+    echo filesize('example.txt') . "<br>";
+    echo file_get_contents('example.txt');//To get the content written into the file.
+}
+
+
+?>
