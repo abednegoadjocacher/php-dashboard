@@ -3,7 +3,7 @@ Building a dashboard
 This is PHP project
 The aim of the project is to learn how to build PHP Framework and
 A dashboard to track project
-In the PHP-DASHBOARD project, I am learning building building
+In the PHP-DASHBOARD project, I am learning, building
 Framework from scratch and using my framework
 To build application.
 
