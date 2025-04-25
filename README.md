@@ -17,3 +17,5 @@ I install XAMPP to enable me run Apache and MySQL servers
 
 On 24th April, 2025, I cleaned up my code base by deleting all that I have done in the previous.
 I am restarting the project again.
+I have install composer and to help me install dependencies.
+Also I used composer to generate json file at the root of the project.
